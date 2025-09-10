@@ -5,7 +5,7 @@ const projects = [
     id: 1,
     title: "Project One",
     description: "A web app for analyzing DNA sequences.",
-    image: "/projects/project1.png", // put image in public/projects/
+    image: "/public/projects/project1.png", // put image in public/projects/
   },
   {
     id: 2,
