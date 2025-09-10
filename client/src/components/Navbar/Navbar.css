@@ -1,0 +1,84 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: transparent;
+  color: #333333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1; /* This makes the left container take up a proportional amount of space */
+  justify-content: flex-start;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1; /* This makes the right container take up an equal amount of space as the left */
+  justify-content: flex-end; /* This aligns the link to the right side of the container */
+}
+
+.navbar-center {
+  flex-grow: 1; /* Still allows the center section to grow to fill space */
+  text-align: center;
+}
+
+.navbar-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+}
+
+.navbar-link {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555555;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Subtle, animated underline effect on hover */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -0.25rem;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Hover state for the link text itself */
+.navbar-link:hover {
+  color: #1a1a1a;
+}
+
+.navbar-link.active {
+  background-color: #f0f0f0; /* light grey highlight */
+  border-radius: 6px;        /* soft rounded edges */
+  padding: 0.25rem 0.75rem;  /* space around text */
+  font-weight: 600;          /* bold text */
+  color: #1a1a1a;            /* darker text for contrast */
+}
+
